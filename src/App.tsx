@@ -5,6 +5,7 @@ import Example3 from './Example3'
 import Example4 from './Example4'
 import Example5 from './Example5'
 import Example6 from './Example6'
+import Example7 from './Example7'
 
 import React from 'react'
 import { HashRouter, Link, Route, Redirect, Switch, } from 'react-router-dom'
@@ -50,6 +51,17 @@ export default function App() {
 
   const classes = useStyles()
 
+  const menu: Array<{ ref: string, label: string, component: () => JSX.Element, }> = [
+    { ref: '/example0', label: 'Example 0', component: Example0, },
+    { ref: '/example1', label: 'Example 1', component: Example1, },
+    { ref: '/example2', label: 'Example 2', component: Example2, },
+    { ref: '/example3', label: 'Example 3', component: Example3, },
+    { ref: '/example4', label: 'Example 4', component: Example4, },
+    { ref: '/example5', label: 'Example 5', component: Example5, },
+    { ref: '/example6', label: 'Example 6', component: Example6, },
+    { ref: '/example7', label: 'Example 7', component: Example7, },
+  ]
+
   return (
     <div className={classes.root}>
       <HashRouter>
@@ -69,62 +81,16 @@ export default function App() {
           <Toolbar />
           <div className={classes.drawerContainer}>
             <List>
-              <ListItem
-                component={Link}
-                button
-                key='/example0'
-                to='/example0'
-              >
-                <ListItemText key='/example0' primary={'Example 0'} />
-              </ListItem>
-              <ListItem
-                component={Link}
-                button
-                key='/example1'
-                to='/example1'
-              >
-                <ListItemText key='/example1' primary={'Example 1'} />
-              </ListItem>
-              <ListItem
-                component={Link}
-                button
-                key='/example2'
-                to='/example2'
-              >
-                <ListItemText key='/example2' primary={'Example 2'} />
-              </ListItem>
-              <ListItem
-                component={Link}
-                button
-                key='/example3'
-                to='/example3'
-              >
-                <ListItemText key='/example3' primary={'Example 3'} />
-              </ListItem>
-              <ListItem
-                component={Link}
-                button
-                key='/example4'
-                to='/example4'
-              >
-                <ListItemText key='/example4' primary={'Example 4'} />
-              </ListItem>
-              <ListItem
-                component={Link}
-                button
-                key='/example5'
-                to='/example5'
-              >
-                <ListItemText key='/example5' primary={'Example 5'} />
-              </ListItem>
-              <ListItem
-                component={Link}
-                button
-                key='/example6'
-                to='/example6'
-              >
-                <ListItemText key='/example6' primary={'Example 6'} />
-              </ListItem>
+              {menu.map(({ ref, label, }, ) => (
+                <ListItem
+                  component={Link}
+                  button
+                  key={ref}
+                  to={ref}
+                >
+                  <ListItemText key={ref} primary={label} />
+                </ListItem>
+              ))}
             </List>
           </div>
         </Drawer>
@@ -133,13 +99,9 @@ export default function App() {
           <main className={classes.content}>
             <Switch>
               <Redirect exact from='/' to='/example0' />
-              <Route exact path='/example0' component={Example0} />
-              <Route exact path='/example1' component={Example1} />
-              <Route exact path='/example2' component={Example2} />
-              <Route exact path='/example3' component={Example3} />
-              <Route exact path='/example4' component={Example4} />
-              <Route exact path='/example5' component={Example5} />
-              <Route exact path='/example6' component={Example6} />
+              {menu.map(({ ref, component, }) => (
+                <Route exact path={ref} component={component} />
+              ))}
             </Switch>
           </main>
         </div>
