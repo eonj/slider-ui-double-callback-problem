@@ -32,13 +32,14 @@ const reducer: React.Reducer<State, Action> = (state, action) => {
 export default function Example5() {
   const [state, dispatch] = React.useReducer(reducer, initialState);
 
+  const interacting = state.velocity !== 0;
   React.useEffect(() => {
     function tick() {
       dispatch({ type: 'TICK' });
     }
-    const timer = window.setInterval(tick, 100);
-    return () => window.clearInterval(timer);
-  }, []);
+    const timer = interacting && window.setInterval(tick, 100);
+    return () => void (timer && window.clearInterval(timer));
+  }, [interacting]);
 
   return (
     <div>
