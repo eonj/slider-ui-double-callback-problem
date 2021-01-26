@@ -4,6 +4,7 @@ import Example2 from './Example2'
 import Example3 from './Example3'
 import Example4 from './Example4'
 import Example5 from './Example5'
+import Example6 from './Example6'
 
 import React from 'react'
 import { HashRouter, Link, Route, Redirect, Switch, } from 'react-router-dom'
@@ -116,6 +117,14 @@ export default function App() {
               >
                 <ListItemText key='/example5' primary={'Example 5'} />
               </ListItem>
+              <ListItem
+                component={Link}
+                button
+                key='/example6'
+                to='/example6'
+              >
+                <ListItemText key='/example6' primary={'Example 6'} />
+              </ListItem>
             </List>
           </div>
         </Drawer>
@@ -130,6 +139,7 @@ export default function App() {
               <Route exact path='/example3' component={Example3} />
               <Route exact path='/example4' component={Example4} />
               <Route exact path='/example5' component={Example5} />
+              <Route exact path='/example5' component={Example6} />
             </Switch>
           </main>
         </div>
