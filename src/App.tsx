@@ -6,6 +6,7 @@ import Example4 from './Example4'
 import Example5 from './Example5'
 import Example6 from './Example6'
 import Example7 from './Example7'
+import Example8 from './Example8'
 
 import React from 'react'
 import { HashRouter, Link, Route, Redirect, Switch, } from 'react-router-dom'
@@ -60,6 +61,7 @@ export default function App() {
     { ref: '/example5', label: 'Example 5', component: Example5, },
     { ref: '/example6', label: 'Example 6', component: Example6, },
     { ref: '/example7', label: 'Example 7', component: Example7, },
+    { ref: '/example8', label: 'Example 8', component: Example8, },
   ]
 
   return (
