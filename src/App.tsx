@@ -139,7 +139,7 @@ export default function App() {
               <Route exact path='/example3' component={Example3} />
               <Route exact path='/example4' component={Example4} />
               <Route exact path='/example5' component={Example5} />
-              <Route exact path='/example5' component={Example6} />
+              <Route exact path='/example6' component={Example6} />
             </Switch>
           </main>
         </div>

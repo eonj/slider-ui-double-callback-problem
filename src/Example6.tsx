@@ -32,7 +32,7 @@ const reducer: React.Reducer<State, Action> = (state, action) => {
   }
 }
 
-export default function Example5() {
+export default function Example6() {
   const [state, dispatch] = React.useReducer(reducer, initialState);
 
   const interacting = state.velocity !== 0;
