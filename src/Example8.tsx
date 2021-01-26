@@ -2,14 +2,13 @@ import * as React from 'react'
 import Slider from '@material-ui/core/Slider'
 import Typography from '@material-ui/core/Typography'
 
+/* eslint-disable-next-line @typescript-eslint/no-unused-vars */
 function useForceUpdate() {
   const [, forceUpdate] = React.useReducer(v => ++v, 0);
   return forceUpdate;
 }
 
 export default function Example8() {
-  const forceUpdate = useForceUpdate();
-
   const [ position, setPosition, ] = React.useState(0)
   const [ velocity, setVelocity, ] = React.useState(0)
   const interacting = velocity !== 0
@@ -32,7 +31,6 @@ export default function Example8() {
     }
     window.requestAnimationFrame(() => {
       setPosition(position => position + velocity);
-      forceUpdate();
     })
   });
 
