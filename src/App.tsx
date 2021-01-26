@@ -3,6 +3,7 @@ import Example1 from './Example1'
 import Example2 from './Example2'
 import Example3 from './Example3'
 import Example4 from './Example4'
+import Example5 from './Example5'
 
 import React from 'react'
 import { HashRouter, Link, Route, Redirect, Switch, } from 'react-router-dom'
@@ -117,6 +118,16 @@ export default function App() {
               >
                 <ListItemText key='/example4' primary={'Example 4'} />
               </ListItem>
+              <ListItem
+                button
+                key='/example5'
+                component={React.useMemo(
+                  () => React.forwardRef((props, ref, ) => <Link to={'/example5'} {...props} />),
+                  []
+                )}
+              >
+                <ListItemText key='/example5' primary={'Example 5'} />
+              </ListItem>
             </List>
           </div>
         </Drawer>
@@ -130,6 +141,7 @@ export default function App() {
               <Route exact path='/example2' component={Example2} />
               <Route exact path='/example3' component={Example3} />
               <Route exact path='/example4' component={Example4} />
+              <Route exact path='/example5' component={Example5} />
             </Switch>
           </main>
         </div>
