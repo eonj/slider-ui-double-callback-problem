@@ -4,6 +4,7 @@ import Example2 from './Example2'
 import Example3 from './Example3'
 import Example4 from './Example4'
 import Example5 from './Example5'
+import Example6 from './Example6'
 
 import React from 'react'
 import { HashRouter, Link, Route, Redirect, Switch, } from 'react-router-dom'
@@ -69,62 +70,60 @@ export default function App() {
           <div className={classes.drawerContainer}>
             <List>
               <ListItem
+                component={Link}
                 button
                 key='/example0'
-                component={React.useMemo(
-                  () => React.forwardRef((props, ref, ) => <Link to={'/example0'} {...props} />),
-                  []
-                )}
+                to='/example0'
               >
                 <ListItemText key='/example0' primary={'Example 0'} />
               </ListItem>
               <ListItem
+                component={Link}
                 button
                 key='/example1'
-                component={React.useMemo(
-                  () => React.forwardRef((props, ref, ) => <Link to={'/example1'} {...props} />),
-                  []
-                )}
+                to='/example1'
               >
                 <ListItemText key='/example1' primary={'Example 1'} />
               </ListItem>
               <ListItem
+                component={Link}
                 button
                 key='/example2'
-                component={React.useMemo(
-                  () => React.forwardRef((props, ref, ) => <Link to={'/example2'} {...props} />),
-                  []
-                )}
+                to='/example2'
               >
                 <ListItemText key='/example2' primary={'Example 2'} />
               </ListItem>
               <ListItem
+                component={Link}
                 button
                 key='/example3'
-                component={React.useMemo(
-                  () => React.forwardRef((props, ref, ) => <Link to={'/example3'} {...props} />),
-                  []
-                )}
+                to='/example3'
               >
                 <ListItemText key='/example3' primary={'Example 3'} />
               </ListItem>
               <ListItem
+                component={Link}
                 button
                 key='/example4'
-                component={React.useMemo(
-                  () => React.forwardRef((props, ref, ) => <Link to={'/example4'} {...props} />),
-                  []
-                )}
+                to='/example4'
               >
                 <ListItemText key='/example4' primary={'Example 4'} />
               </ListItem>
               <ListItem
                 component={Link}
                 button
-                to="/example5"
                 key='/example5'
+                to='/example5'
               >
-                <ListItemText key='/example5' primary={'Example 5'}/>
+                <ListItemText key='/example5' primary={'Example 5'} />
+              </ListItem>
+              <ListItem
+                component={Link}
+                button
+                key='/example6'
+                to='/example6'
+              >
+                <ListItemText key='/example6' primary={'Example 6'} />
               </ListItem>
             </List>
           </div>
@@ -140,6 +139,7 @@ export default function App() {
               <Route exact path='/example3' component={Example3} />
               <Route exact path='/example4' component={Example4} />
               <Route exact path='/example5' component={Example5} />
+              <Route exact path='/example5' component={Example6} />
             </Switch>
           </main>
         </div>
