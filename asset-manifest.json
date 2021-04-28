@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/slider-ui-double-callback-problem/static/css/main.6dea0f05.chunk.css",
-    "main.js": "/slider-ui-double-callback-problem/static/js/main.9870e1e1.chunk.js",
-    "main.js.map": "/slider-ui-double-callback-problem/static/js/main.9870e1e1.chunk.js.map",
+    "main.js": "/slider-ui-double-callback-problem/static/js/main.f0021e7b.chunk.js",
+    "main.js.map": "/slider-ui-double-callback-problem/static/js/main.f0021e7b.chunk.js.map",
     "runtime-main.js": "/slider-ui-double-callback-problem/static/js/runtime-main.0f088257.js",
     "runtime-main.js.map": "/slider-ui-double-callback-problem/static/js/runtime-main.0f088257.js.map",
     "static/js/2.ea54a842.chunk.js": "/slider-ui-double-callback-problem/static/js/2.ea54a842.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.0f088257.js",
     "static/js/2.ea54a842.chunk.js",
     "static/css/main.6dea0f05.chunk.css",
-    "static/js/main.9870e1e1.chunk.js"
+    "static/js/main.f0021e7b.chunk.js"
   ]
 }
